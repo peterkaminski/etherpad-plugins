@@ -68,7 +68,7 @@ exports.aceCreateDomLine = function(name, context){
   {
     var url = (inTimeslider ? '../' : './') + internalHref;
     var modifier = {
-      extraOpenTags: '<a href="' + Security.escapeHTMLAttribute(url) +'">',
+      extraOpenTags: '<a target="_self" href="' + Security.escapeHTMLAttribute(url) +'">',
       extraCloseTags: '</a>',
       cls: cls
     }
