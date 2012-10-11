@@ -14,7 +14,8 @@ var linkSanitizingFn = function(result){
   var s = result[0];  
   result[0] = s
     .substr(2,s.length-4) // Skip the first two chars ([[) and omit the last ones (]])
-    .replace(/\s+/g, '_'); // Every space will be replaced by an underscore
+    .replace(/\W+/g, '_') // Every non-word character will be replaced by an underscore
+    .toLowerCase(); // Map mixed case to lowercase (point all cases to same page)
   return result;
 };
 
